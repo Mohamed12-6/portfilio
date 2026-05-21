@@ -180,4 +180,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 <p align="center">Designed & Built by <strong>Mohamed Osama Hamedy</strong> — 2026</p>
+=======
+<p align="center">Designed & Built by <strong>Mohamed Osama Hamedy</strong> — 2026</p>
+>>>>>>> abc1a8c79743fa54067f3295f8e04014d67c7f79

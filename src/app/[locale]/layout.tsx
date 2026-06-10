@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import PortfolioChatbot from "@/components/PortfolioChatbot";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -23,7 +24,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "مطور ويب متكامل | Full-Stack Developer Portfolio",
-  description: "الموقع التعريفي الشخصي لعرض المشاريع والمهارات البرمجية | Modern Multilingual Portfolio Showcase",
+  description:
+    "الموقع التعريفي الشخصي لعرض المشاريع والمهارات البرمجية | Modern Multilingual Portfolio Showcase",
 };
 
 export function generateStaticParams() {
@@ -47,9 +49,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       dir={direction}
       className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} h-full scroll-smooth`}
     >
-      <body className={`${activeFontClass} min-h-full bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-teal-500 selection:text-slate-900`}>
+      <body
+        className={`${activeFontClass} min-h-full bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-teal-500 selection:text-slate-900`}
+      >
         <div className="fixed inset-0 -z-10 bg-[radial-gradient(100%_50%_at_50%_0%,rgba(20,184,166,0.07)_0,rgba(9,15,30,0)_50%),radial-gradient(120%_120%_at_50%_10%,rgba(99,102,241,0.04)_0,rgba(9,15,30,0)_50%)] pointer-events-none" />
         {children}
+        {/* PortfolioChatbot is a client component — safe inside a server layout */}
+        <PortfolioChatbot locale={locale} />
       </body>
     </html>
   );
